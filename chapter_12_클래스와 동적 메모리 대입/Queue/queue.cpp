@@ -1,7 +1,6 @@
 // queue.cpp -- Queue와 Customer 메서드들
 #include "queue.hpp";
 #include <cstdlib>
-#include <ctime>
 
 // Queue 메서드들
 Queue::Queue(int qs) : qsize(qs)
@@ -80,7 +79,6 @@ bool Queue::dequeue(Item & item)
 // 처리 시간은 1, 2, 3 중에서 무작위로 한 값이 설정된다
 void Customer::set(long when)
 {
-  std::srand(std::time(0));
   processtime = std::rand() % 3 + 1;
   arrive = when;
 }
