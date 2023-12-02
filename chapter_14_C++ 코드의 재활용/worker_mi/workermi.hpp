@@ -1,4 +1,4 @@
-// workermi.hpp -- 다중 상속읊 사용하는 작업 클래스
+// workermi.hpp -- 다중 상속을 사용하는 작업 클래스
 #ifndef WORKERMI_H_
 #define WORKERMI_H_
 
@@ -23,7 +23,7 @@ public:
   virtual void Show(void) const;
 };
 
-class Waiter : public Worker
+class Waiter : virtual public Worker
 {
 private:
   int panache;
@@ -42,7 +42,7 @@ public:
   void Show(void) const;
 };
 
-class Singer : public Worker
+class Singer : virtual public Worker
 {
 protected:
   enum {other, alto, contralto, soprano, bass, baritone, tenor};
@@ -71,17 +71,19 @@ protected:
   void Data() const;
   void Get();
 public:
+// 생성자
   SingingWaiter(void) {}
-  SingingWaiter(const::string & s, long n, int p = 0, int v = other)
+  SingingWaiter(const std::string & s, long n, int p = 0, int v = other)
     : Worker(s, n), Waiter(s, n, p), Singer(s, n, v) {}
   SingingWaiter(Worker & wk, int p = 0, int v = other)
-    : Worker(wk), Waiter(wk, n, p), Singer(wk, n, v) {}
+    : Worker(wk), Waiter(wk, p), Singer(wk, v) {}
   SingingWaiter(Waiter & wt, int v = other)
     : Worker(wt), Waiter(wt), Singer(wt, v) {}
   SingingWaiter(Singer & wt, int p = 0)
-    : Worker(wt), Waiter(wt, p), Singer(wt) {}\
+    : Worker(wt), Waiter(wt, p), Singer(wt) {}
+// 멤버 함수
   void Set();
   void Show() const;
-}
+};
 
 #endif
