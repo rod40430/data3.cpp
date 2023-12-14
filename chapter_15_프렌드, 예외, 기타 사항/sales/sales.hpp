@@ -6,8 +6,9 @@
 
 class Sales
 {
-public:
+protected:
   enum {MONTHS = 12};
+public:
   class bad_index : public std::logic_error
   {
   private:
