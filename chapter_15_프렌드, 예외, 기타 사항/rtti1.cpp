@@ -52,7 +52,7 @@ int main(void)
     {
       pg = GetOne();
       pg->Speak();
-      if (ps == dynamic_cast<Superb *>(pg))
+      if (ps = dynamic_cast<Superb *>(pg))
         ps->Say();
     }
 
