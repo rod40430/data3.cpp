@@ -19,7 +19,7 @@ int main(void)
   cout<<"rd1 value and address : "<<rd1<<", "<<&rd1<<endl;
   cout<<"rd2 value and address : "<<rd2<<", "<<&rd2<<endl;
   cout<<"rd3 value and address : "<<rd3<<", "<<&rd3<<endl;
-  cin.get();
+  cin.get(); // 마지막 입럭을 받아야 종료
 
   return 0;
 }
