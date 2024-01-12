@@ -11,7 +11,7 @@ int main(void)
   using namespace std;
 
   double tc = 21.5;
-  double && rd1 = 7.07;
+  double && rd1 = 7.07;  // &&는 rvalue 참조 문법이다
   double && rd2 = 1.8 * tc + 32.0;
   double && rd3 = f(rd2);
 
