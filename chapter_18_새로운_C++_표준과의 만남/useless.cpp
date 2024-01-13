@@ -26,7 +26,7 @@ public:
 // 구현
 int Useless::ct = 0;
 
-Useless::Useless(void)
+Useless::Useless(void) : n(0)
 {
   ++ct;
   pc = nullptr;
