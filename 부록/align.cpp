@@ -19,8 +19,8 @@ struct things2
 
 int main(void)
 {
-  things1 th1;
-  things2 th2;
+  things1 th1;  // 16바이트
+  things2 th2;  // 24바이트
   
   cout<<"char aligment : "<<alignof(char)<<endl;
   cout<<"int aligment : "<<alignof(int)<<endl;
