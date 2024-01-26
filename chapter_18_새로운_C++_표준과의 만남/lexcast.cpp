@@ -17,5 +17,5 @@ int main(void)
   gain = gain + boost::lexical_cast<string>(weight) + "이 됩니다.";
   cout<<gain<<endl;
 
-  return 0;
+  return 0; 
 }
